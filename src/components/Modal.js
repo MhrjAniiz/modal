@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { MdClose } from "react-icons/md";
-import { useRef, useEffect, useCallBack } from "react";
+import { useRef, useEffect, useCallback } from "react";
 import { useSpring, animated } from "react-spring";
 
 const Background = styled.div`
@@ -82,7 +82,7 @@ const Modal = ({ showModal, setShowModal }) => {
     }
   };
 
-  const keyPress = useCallBack(
+  const keyPress = useCallback(
     (e) => {
       if (e.key === "Escape" && showModal) {
         setShowModal(false);
