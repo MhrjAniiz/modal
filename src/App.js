@@ -5,6 +5,7 @@ import { GlobalStyle } from "./GlobalStyles";
 import axios from "axios";
 import Posts from "./components/Posts";
 import Pagination from "./components/Pagination";
+import Form from "./Form";
 
 const Container = styled.div`
   display: flex;
@@ -54,11 +55,19 @@ export default function App() {
 
   return (
     <>
+      {/* modal component part */}
       <Container>
         <Button onClick={openModal}>i'm a modal.</Button>
         <Modal showModal={showModal} setShowModal={setShowModal} />
         <GlobalStyle />
       </Container>
+      {/* modal component end */}
+
+      {/* form validation */}
+      <Form />
+      {/* form validation end */}
+
+      {/* pagination */}
       <h1 className="text-primary mb-3">The Posts</h1>
       <Posts posts={currentPosts} loading={loading} />
       <Pagination
@@ -66,6 +75,7 @@ export default function App() {
         totalPosts={posts.length}
         Paginate={Paginate}
       />
+      {/* pagination end */}
     </>
   );
 }
